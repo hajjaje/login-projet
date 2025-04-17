@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Input Values</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: #f9f9f9;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    .button-wrapper {
+      display: flex;
+      justify-content: space-between; /* Align buttons to left and right */
+      gap: 10px; /* Optional: space between buttons */
+    }
+
+    .submit {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 48%; /* Make buttons take up about half the width each */
+    }
+
+    .submit:hover {
+      background-color: #45a049;
+    }
+
+    .home {
+      background-color: rgb(255, 41, 41);
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 48%; /* Make buttons take up about half the width each */
+      text-align: center;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .home:hover {
+      background-color: rgb(247, 107, 107);
+    }
+  </style>
+</head>
+<body>
+  <h1>Input the values</h1>
+  <form action="{{ url_for('calculator_result') }}" method="post">
+    {% for field in fields %}
+      <label>{{ field.label }}:</label>
+      <input type="text" name="{{ field.name }}" value="{{ field.value }}" required><br><br>
+    {% endfor %}
+    <div class="button-wrapper">
+      <a href="{{ url_for('home') }}" class="home">Return to Home</a>
+      <button type="submit" class="submit">Calculate</button>
+    </div>
+  </form>
+</body>
+</html>

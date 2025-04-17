@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Result</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: #f9f9f9;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .result-container {
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    p {
+      font-size: 18px;
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .home, .form-link {
+      background-color: rgb(255, 41, 41);
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      text-align: center;
+      display: inline-block;
+      text-decoration: none;
+      width: 48%;
+      margin-top: 10px;
+    }
+
+    .home:hover, .form-link:hover {
+      background-color: rgb(247, 107, 107);
+    }
+
+    .button-wrapper {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Here is the result</h1>
+  <div class="result-container">
+    <p>The diffusion coefficient D<sub>AB</sub> is: <strong>{{ D_AB }}</strong> cm²/s</p>
+    <p>The relative error compared to the experimental value is: <strong>{{ error }}%</strong></p>
+
+    <div class="button-wrapper">
+      <a href="{{ url_for('home') }}" class="home">Return to Home</a>
+      <a href="{{ url_for('calculator_form') }}" class="form-link">Return to Form</a>
+    </div>
+  </div>
+</body>
+</html>
