@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accueil</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .logout {
+            margin-top: 20px;
+            text-decoration: none;
+            background-color: #f44336;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 3px;
+            display: inline-block;
+        }
+        .logout:hover {
+            background-color: #d32f2f;
+        }
+        .next {
+            margin-top: 20px;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 3px;
+            display: inline-block;
+            
+        }
+        .next:hover {
+            background-color: #45a049;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bienvenue, {{ username }} !</h2>
+        <center><p>Bienvenue dans le calculateur du coefficient de diffusion.</p></center>
+        <a href="{{ url_for('calculator_form') }}" class="next">Suivant</a>
+        <a href="{{ url_for('logout') }}" class="logout">Se déconnecter</a>
+    </div>
+</body>
+</html>
